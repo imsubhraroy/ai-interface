@@ -114,40 +114,6 @@ The interface combines **functional minimalism** with **modern interaction patte
 
 ### Core Components
 
-#### 1. Model Selector
-```jsx
-<ModelSelector 
-  models={['GPT-3.5', 'GPT-4', 'Claude-3']}
-  selectedModel="GPT-4"
-  onModelChange={handleModelChange}
-  theme={theme}
-/>
-```
-
-#### 2. Prompt Editor
-- Multi-line textarea with auto-resize
-- Template loading functionality
-- Character count and keyboard shortcuts
-- Save/load prompt templates (stored in component state)
-
-#### 3. Parameters Panel
-```jsx
-<ParameterSlider 
-  label="Temperature"
-  value={0.7}
-  min={0}
-  max={1}
-  step={0.1}
-  onChange={setTemperature}
-/>
-```
-
-#### 4. Chat/Output Area
-- Message history with timestamps
-- Copy functionality for each message
-- Export conversation as JSON
-- Loading states with skeleton UI
-- Responsive message layout
 
 ### Data & State Management
 
@@ -215,8 +181,8 @@ const mockAPICall = async (prompt, model, parameters) => {
 
 ```bash
 # Clone the repository
-git clone https://github.com/username/ai-interface-assessment.git
-cd ai-interface-assessment
+git https://github.com/imsubhraroy/ai-interface.git
+cd ai-interface
 
 # Install dependencies
 npm install
@@ -284,11 +250,6 @@ const toggleTheme = () => {
 Access the complete component library at: `http://localhost:6006`
 
 #### Available Components
-
-1. **Button** - Multiple variants (primary, secondary, ghost) with icon support
-2. **ModelSelector** - Dropdown for AI model selection
-3. **ChatBubble** - Message display with user/assistant variants
-4. **ParameterSlider** - Range inputs for model parameters
 
 #### Story Examples
 
@@ -375,7 +336,7 @@ const handleKeyDown = (e) => {
 - **Tailwind CSS** - Utility-first styling with custom design system
 
 ### Development Tools
-- **Storybook 7** - Component development and documentation
+- **Storybook 9** - Component development and documentation
 - **ESLint + Prettier** - Code quality and formatting
 - **Husky** - Git hooks for quality gates
 - **Vercel** - Deployment and hosting
@@ -391,12 +352,8 @@ const handleKeyDown = (e) => {
 ai-interface-assessment/
 ├── src/
 │   ├── components/           # Reusable UI components
-│   │   ├── Button/
-│   │   │   ├── Button.jsx
-│   │   │   └── Button.stories.js
-│   │   ├── ChatBubble/
-│   │   ├── ModelSelector/
-│   │   └── ParameterSlider/
+│   │   ├── home.jsx
+│   
 ├── .storybook/              # Storybook configuration
 │   ├── main.js
 │   └── preview.js
